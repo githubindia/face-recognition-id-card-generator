@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .printButton{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 66px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+    .card .card-image img {
+      left: 10px;
+    }
+  </style>
+  <script>
+      function printDiv(divName) {
+          var printContents = document.getElementById(divName).innerHTML;
+          // var originalContents = document.body.innerHTML;
+          // document.body.innerHTML = printContents;
+          window.print();
+          // document.body.innerHTML = originalContents;
+      }
+      var defaultText = '';
+      // Editable on click
+        function endEdit(e) {
+            var input = $(e.target),
+                label = input && input.prev();
+
+            label.text(input.val() === '' ? defaultText : input.val());
+            input.hide();
+            label.show();
+        }
+
+        $('.clickedit').hide()
+        .focusout(endEdit)
+        .keyup(function (e) {
+            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                endEdit(e);
+                return false;
+            } else {
+                return true;
+            }
+        })
+        .prev().click(function () {
+            $(this).hide();
+            $(this).next().show().focus();
+        });
+      
+      </script>
+</head>
+<body style="background-color:rgb(254, 252, 237)">
+    <h3 style="text-align:center">Temporary ID Card</h3>
+    <div class="col s12 m7" class="card" id="printMe">
+        <!-- <h2 class="header">Horizontal Card</h2> -->
+        <div class="card horizontal">
+          <div class="card-image">
+              
+            <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/primary/logo.png" style="top:10px;height:100px;margin:0px auto;" >
+            <img src="<%= details.image %>" style="top:40px;border:4px solid black">
+            
+            <!-- <table >
+            <tr style="float:right">
+                <td>Validity</td>
+                <td>:</td>
+                <td>22-07-2018</td>
+              </tr>
+              </table> -->
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <h6 style="display:inline">ID: </h6><h6 style="display:inline"><%= details.employeeid %><h6>
+              <h5><%= details.employeename%></h5>
+              <!-- <h5 style="display:inline">Phone: </h5><h6 style="display:inline">6676786876</h6>
+              <h5 style="display:inline">Company: </h5><h6 style="display:inline">Hexaware</h6>
+              <h5 style="display:inline">Department: </h5><h6 style="display:inline">RD</h6> -->
+              <table>
+                <tr>
+                  <td>Phone</td>
+                  <td>:</td>
+                  <td><%= details.mobileno %></td>
+                </tr>
+                <tr>
+                  <td>Company</td>
+                  <td>:</td>
+                  <td>Hexaware</td>
+                </tr>
+                <tr>
+                  <td>Department</td>
+                  <td>:</td>
+                  <td><%= details.department %></td>
+                </tr>
+                <tr>
+                  <td>To Meet</td>
+                  <td>:</td>
+                  <td>
+                      <!-- <label class="pull-left"><%= details.toMeet%></label> -->
+                      <div contenteditable="true">Anything inside this div will be editable!</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Purpose</td>
+                  <td>:</td>
+                  <td>Temporary ID</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-action">
+              <a>Validity:</a><span><%= details.date%></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div >
+          <br/>
+          <!-- <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px"><button onclick="printDiv('printMe')"  style="background-color: rgba(60, 38, 0, 0.845);color:white">PRINT</button></div> -->
+          <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px"><button onclick="printDiv('printMe')"  style="background-color: rgba(60, 38, 0, 0.845);color:white">PRINT</button></div> 
+
+      <div>
+</body>
+</html>

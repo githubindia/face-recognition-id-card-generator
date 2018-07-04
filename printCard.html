@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Temporary ID Card</h2>
+
+<div class="card">
+  <img src="http://mediad.publicbroadcasting.net/p/kunm/files/styles/x_large/public/201801/Anonymous.jpg" alt="John" style="width:100%">
+  <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/primary/logo.png" alt="John" style="width:50%">
+  <h1>Shubham Gupta</h1>
+
+  <p class="title">Associate Software Engineer</p>
+  <p>Manager: MRD</p> -->
+  <!-- <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div> -->
+ <!-- <p><button>Date: <span style="color:rgb(240, 250, 175)">DD/MM/YYYY</span></button></p>
+</div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .printButton{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 200px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+  </style>
+  <script>
+      function printDiv(divName){
+          var printContents = document.getElementById(divName).innerHTML;
+          var originalContents = document.body.innerHTML;
+          // document.body.innerHTML = printContents;
+          window.print();
+          // document.body.innerHTML = originalContents;
+      }
+      
+      </script>
+</head>
+<body>
+    <div class="col s12 m7" class="card" id="printMe">
+        <!-- <h2 class="header">Horizontal Card</h2> -->
+        <div class="card horizontal">
+          <div class="card-image">
+              
+            <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/primary/logo.png" style="top:10px;height:100px;margin:0px auto" >
+            <img src="http://mediad.publicbroadcasting.net/p/kunm/files/styles/x_large/public/201801/Anonymous.jpg" style="top:40px">
+            
+            <!-- <table >
+            <tr style="float:right">
+                <td>Validity</td>
+                <td>:</td>
+                <td>22-07-2018</td>
+              </tr>
+              </table> -->
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <h6 style="display:inline">ID: </h6><h6 style="display:inline">39355<h6>
+              <h5>Shubham Gupta</h5>
+              <!-- <h5 style="display:inline">Phone: </h5><h6 style="display:inline">6676786876</h6>
+              <h5 style="display:inline">Company: </h5><h6 style="display:inline">Hexaware</h6>
+              <h5 style="display:inline">Department: </h5><h6 style="display:inline">RD</h6> -->
+              <table>
+                <tr>
+                  <td>Phone</td>
+                  <td>:</td>
+                  <td>7878787878</td>
+                </tr>
+                <tr>
+                  <td>Company</td>
+                  <td>:</td>
+                  <td>Hexaware</td>
+                </tr>
+                <tr>
+                  <td>Department</td>
+                  <td>:</td>
+                  <td>Innov Lab</td>
+                </tr>
+                <tr>
+                  <td>To Meet</td>
+                  <td>:</td>
+                  <td>Manohar</td>
+                </tr>
+                <tr>
+                  <td>Purpose</td>
+                  <td>:</td>
+                  <td>Temporary ID</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-action">
+              <a>Validity:</a><span>22-07-2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div >
+          <br/>
+          <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px"><button onclick="printDiv('printMe')"  style="background-color: rgba(60, 38, 0, 0.845);color:white">PRINT</button></div> 
+      <div>
+</body>
+</html>

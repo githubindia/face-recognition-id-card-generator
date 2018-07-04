@@ -1,0 +1,52 @@
+{
+    "employeeDetails" : [
+        {
+            "id" : "12345",
+            "name" : "Shubham Gupta",
+            "phone": 8878339946,
+            "bloodGroup" : "B+" ,
+            "department": "Innovation Lab",
+            "yearsInHexaware": 0.8
+        },
+        {
+            "id" : "12346",
+            "name" : "Abhishek Dash",
+            "phone": 8765787665,
+            "bloodGroup" : "O+" ,
+            "department": "Innovation Lab",
+            "yearsInHexaware": 1.6
+        },
+        {
+            "id" : "12347",
+            "name" : "Lohit Kumar Bundel",
+            "phone": 7666565558,
+            "bloodGroup" : "A-" ,
+            "department": "Innovation Lab",
+            "yearsInHexaware": 3.2
+        },
+        {
+            "id" : "12349",
+            "name" : "Pourab Karchaudhuri",
+            "phone": 7666565559,
+            "bloodGroup" : "A-" ,
+            "department": "Innovation Lab",
+            "yearsInHexaware": 1.6
+        },
+        {
+            "id" : "12350",
+            "name" : "Lokesh Kosuri",
+            "phone": 7666565512,
+            "bloodGroup" : "A-" ,
+            "department": "Innovation Lab",
+            "yearsInHexaware": 0.5
+        },
+        {
+            "id" : "12351",
+            "name" : "Bikram Thapa",
+            "phone": 7666565532,
+            "bloodGroup" : "A-" ,
+            "department": "Innovation Lab",
+            "yearsInHexaware": 1.2
+        }
+    ]
+}
