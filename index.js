@@ -54,7 +54,8 @@ app.post('/upload', (req, res) => {
     request(options, function (error, response, body) {
         // if (error) throw new Error(error);
         body = JSON.parse(body);
-        if(body.hasOwnProperty('Errors')) {
+        // console.log(JSON.stringify(body.images[0].transaction.message));
+        if(body.hasOwnProperty('Errors') || body.images[0].transaction.message == 'no match found') {
             res.render('index', {
                 msg: 'Face not recognized. Please try again',
                 vis: 'visible'
