@@ -92,7 +92,7 @@ function printDiv(divName){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Document</title>
+  <title>Hexaware ID Card Generator</title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -127,39 +127,28 @@ function printDiv(divName){
           // window.print();
           // document.body.innerHTML = originalContents;
       }
-      
-      </script>
+  
+  </script>
 </head>
 <body style="background-color:rgb(254, 252, 237)">
     <h3 style="text-align:center">Temporary ID Card</h3>
-    <div class="col s12 m7" class="card" id="printMe">
-        <!-- <h2 class="header">Horizontal Card</h2> -->
+    <form id="myForm" method="post" action="/printCard" >
+      <div class="col s12 m7" class="card" id="printMe">
+          <!-- <h2 class="header">Horizontal Card</h2> -->
         <div class="card horizontal">
           <div class="card-image">
-              
             <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/primary/logo.png" style="top:10px;height:100px;margin:0px auto;" >
-            <form id="myForm" method="post" action="/printCard" >
-              <input type="hidden" name="image" value="<%= image %>"/>
+            <input type="hidden" name="image" value="<%= image %>"/>
             <img src="<%= image %>" style="top:40px;border:4px solid black">
-            
-            <!-- <table >
-            <tr style="float:right">
-                <td>Validity</td>
-                <td>:</td>
-                <td>22-07-2018</td>
-              </tr>
-              </table> -->
           </div>
           <div class="card-stacked">
             <div class="card-content">
-                <!-- <form id="myForm" method="post" action="/printCard" enctype="multipart/form-data"> -->
-                  <input type="hidden" name="employeeid" value="<%= details.employeeid %>"/>
+              <!-- <form id="myForm" method="post" action="/printCard" enctype="multipart/form-data"> -->
+              <input type="hidden" name="employeeid" value="<%= details.employeeid %>"/>
               <h6 style="display:inline">ID: </h6><h6 style="display:inline"><%= details.employeeid %><h6>
-                  <input type="hidden" name="employeename" value="<%= details.employeedetails[0].employeename%>"/>
+              <input type="hidden" name="employeename" value="<%= details.employeedetails[0].employeename%>"/>
               <h5><%= details.employeedetails[0].employeename%></h5>
-              <!-- <h5 style="display:inline">Phone: </h5><h6 style="display:inline">6676786876</h6>
-              <h5 style="display:inline">Company: </h5><h6 style="display:inline">Hexaware</h6>
-              <h5 style="display:inline">Department: </h5><h6 style="display:inline">RD</h6> -->
+              <!-- <h5 style="display:inline">Phone: </h5><h6 style="display:inline">6676786876</h6> -->
               <table>
                 <input type="hidden" name="mobileno" value="<%= details.employeedetails[0].mobileno %>"/>
                 <tr>
@@ -192,18 +181,17 @@ function printDiv(divName){
               </table>
             </div>
             <div class="card-action">
-                <input type="hidden" name="date" value="<%= date%>"/>
+              <input type="hidden" name="date" value="<%= date%>"/>
               <a>Validity:</a><span><%= date%></span>
             </div>
-          </form>
           </div>
         </div>
       </div>
-      <div >
-          <br/>
-          <!-- <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px"><button onclick="printDiv('printMe')"  style="background-color: rgba(60, 38, 0, 0.845);color:white">PRINT</button></div> -->
-          <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px"><button onclick="saveDetails()"  style="background-color: rgba(60, 38, 0, 0.845);color:white">SAVE</button></div> 
-
-      <div>
+    </form>
+    <br/>
+    <!-- <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px"><button onclick="printDiv('printMe')"  style="background-color: rgba(60, 38, 0, 0.845);color:white">PRINT</button></div> -->
+    <div class='printButton' style="background-color: rgba(26, 21, 21, 0.94);padding:2px">
+      <button onclick="saveDetails()"  style="background-color: rgba(60, 38, 0, 0.845);color:white">SAVE</button>
+    </div> 
 </body>
 </html>
